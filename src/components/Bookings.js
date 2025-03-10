@@ -1,5 +1,6 @@
 import React, { useState, useContext } from 'react';
 import { TravelContext } from '../context/TravelContext';
+import StyledButton from './StyledButton';
 
 const Bookings = () => {
   const { addBooking } = useContext(TravelContext);
@@ -22,18 +23,36 @@ const Bookings = () => {
       <h2>Book Your Trip</h2>
       <form onSubmit={handleSubmit}>
         <div>
-          <label>Name:</label>
-          <input type="text" value={name} onChange={(e) => setName(e.target.value)} required />
+          <label htmlFor="name">Name:</label>
+          <input
+            id="name"
+            type="text"
+            value={name}
+            onChange={(e) => setName(e.target.value)}
+            required
+          />
         </div>
         <div>
-          <label>Destination:</label>
-          <input type="text" value={destination} onChange={(e) => setDestination(e.target.value)} required />
+          <label htmlFor="destination">Destination:</label>
+          <input
+            id="destination"
+            type="text"
+            value={destination}
+            onChange={(e) => setDestination(e.target.value)}
+            required
+          />
         </div>
         <div>
-          <label>Date:</label>
-          <input type="date" value={date} onChange={(e) => setDate(e.target.value)} required />
+          <label htmlFor="date">Date:</label>
+          <input
+            id="date"
+            type="date"
+            value={date}
+            onChange={(e) => setDate(e.target.value)}
+            required
+          />
         </div>
-        <button type="submit">Submit</button>
+        <StyledButton type="submit">Submit</StyledButton>
       </form>
     </div>
   );
